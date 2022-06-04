@@ -5,15 +5,9 @@ from pystray import MenuItem as TrayMenuItem
 import pystray
 from PIL import Image
 import gettext
-import serial.tools.list_ports
 import webbrowser
-
-# Search for COM port of FMA100
-ports = [port.name for port in serial.tools.list_ports.grep('0A12:4007.*FMA100')]
-if ports:
-    comport = ports[0]
-else:
-    comport = "None"
+from FlooTransceiver import FlooTransceiver
+from FlooPacket import FlooPacket
 
 # Set the local directory
 localedir = './locale'
@@ -68,10 +62,10 @@ def auto_on_switch():
     global autoOn
     # Determine is on or off
     if autoOn:
-        autoUrlButton.config(image=off)
+        autoOnButton.config(image=off)
         autoOn = False
     else:
-        autoUrlButton.config(image=on)
+        autoOnButton.config(image=on)
         autoOn = True
 
 
@@ -136,13 +130,8 @@ versionInfo = tk.Label(aboutPanel, text="Version 1.0.0\nCopyright© 2022\nFlairm
 versionInfo.pack()
 # Support page
 
-# status bar
-if comport == "None":
-    statusbar = tk.Label(root, text=_("Please insert your FMA100"), bd=1, relief=tk.SUNKEN, anchor=tk.W)
-else:
-    statusbar = tk.Label(root, text=_("Use FMA100 on " + comport), bd=1, relief=tk.SUNKEN, anchor=tk.W)
-    # webbrowser.open('https://www.google.com')
 # statusbar.grid(column = 0, row = 2)
+statusbar = tk.Label(root, text=_("Initializing"), bd=1, relief=tk.SUNKEN, anchor=tk.W)
 statusbar.pack(side=tk.BOTTOM, fill=tk.X)
 
 
@@ -204,6 +193,36 @@ minimizeButton = tk.Button(windowPanel, text=_("Minimize to System Tray"), comma
 minimizeButton.grid(column=0, row=1, columnspan=2, padx=(10, 10), pady=(10, 10), sticky='ew')
 quitButton = tk.Button(windowPanel, text=_("Quit App"), command=quit_all)
 quitButton.grid(column=0, row=2, columnspan=2, padx=(10, 10), pady=(0, 10), sticky='ew')
+
+floo_transceiver = FlooTransceiver()
+floo_transceiver.daemon = True
+floo_transceiver.start()
+
+
+def heartbeat_task():
+    global statusbar
+    global floo_transceiver
+    port_name = floo_transceiver.port_name
+    # status bar
+    if floo_transceiver.port is None:
+        statusbar.config(text=_("Please insert your FlooGoo dongle"))
+    else:
+        # check local clipboard
+        if floo_transceiver.notified == FlooPacket.TYP_STR:
+            statusbar.config(
+                text=_("Use FlooGoo dongle on ") + port_name + " - " + _("A new string from your mobile App"))
+        elif floo_transceiver.notified == FlooPacket.TYP_IMG:
+            statusbar.config(
+                text=_("Use FlooGoo dongle on ") + port_name + " - " + _("A new image from your mobile App"))
+        else:
+            statusbar.config(
+                text=_("Use FlooGoo dongle on ") + port_name)
+
+    root.after(1000, heartbeat_task)  # reschedule event in 2 seconds
+
+
+# Start transceiver to FlooGoo
+root.after(1000, heartbeat_task)
 
 # all widgets will be here
 # Execute Tkinter
