@@ -52,7 +52,7 @@ class RwcpClient(object):
 
     def sendData(self, payload_bytes, mtu_size):
         self.transferSize = len(payload_bytes)
-        print("total transfer size", self.transferSize)
+        # print("total transfer size", self.transferSize)
         self.progress = 0
         bytes_to_send = self.transferSize
         offset = 0
@@ -63,7 +63,7 @@ class RwcpClient(object):
             bytes_to_send -= payload_size
             if payload_size < mtu_size - 1:
                 payload.extend(bytearray(mtu_size - 1 - payload_size))
-            print("add payload size", payload_size)
+            # print("add payload size", payload_size)
             self.appendPayload(payload)
         self.startTransfer()
 
@@ -71,7 +71,7 @@ class RwcpClient(object):
         self.pendingData.append(payload_bytes)
 
     def startTransfer(self):
-        print("startTransfer")
+        # print("startTransfer")
         if self.state == RwcpClient.STATE_LISTEN:
             self.startSession()
         elif self.state == RwcpClient.STATE_ESTABLISHED:
@@ -86,7 +86,7 @@ class RwcpClient(object):
 
     def startSession(self) -> bool:
         if self.state != RwcpClient.STATE_LISTEN:
-            print("Can not start new transfer while not in idle")
+            # print("Can not start new transfer while not in idle")
             return False
         if self.sendRstSegment():
             return True
@@ -119,7 +119,7 @@ class RwcpClient(object):
             index += 1
 
     def receiveSyncAck(self, segment) -> bool:
-        print("Sync Ack")
+        # print("Sync Ack")
         match self.state:
             case RwcpClient.STATE_SYNC_SENT:
                 self.cancelTimeout()
@@ -140,7 +140,7 @@ class RwcpClient(object):
                 return False
 
     def receiveDataAck(self, segment) -> bool:
-        print("Data Ack", self.state)
+        # print("Data Ack", self.state, "seq:", segment.sequence)
         match self.state:
             case RwcpClient.STATE_ESTABLISHED:
                 self.cancelTimeout()
@@ -159,7 +159,7 @@ class RwcpClient(object):
                 return False
 
     def receiveRst(self, segment) -> bool:
-        print("Rst Ack ", self.state)
+        # print("Rst Ack ", self.state)
         match self.state:
             case RwcpClient.STATE_SYNC_SENT:
                 return True
@@ -198,20 +198,24 @@ class RwcpClient(object):
     def validateAckSequence(self, opcode, sequence) -> int:
         not_validated = -1
         if sequence < 0:
+            # print("sequence < 0")
             return not_validated
         if sequence > RwcpSegment.MAX_SEQUENCE:
+            # print("sequence > 63")
             return not_validated
         if self.lastAckSequence < self.nextSequence and (
                 sequence < self.lastAckSequence or sequence > self.nextSequence):
+            # print("last Ack less than next and seq out of this range")
             return not_validated
         if self.lastAckSequence > self.nextSequence and self.lastAckSequence > sequence > self.nextSequence:
+            # print("last Ack bigger than next and seq out of this range")
             return not_validated
 
         acknowledged = 0
         next_ack_sequence = self.lastAckSequence
         while next_ack_sequence != sequence:
             next_ack_sequence = self.increaseSequenceNumber(next_ack_sequence)
-            print("compare last seq: ", next_ack_sequence, "with ", sequence)
+            # print("compare last seq: ", next_ack_sequence, "with ", sequence)
             if self.removeSegmentFromQueue(opcode, next_ack_sequence):
                 self.lastAckSequence = next_ack_sequence
             if self.credits < self.window:
@@ -230,7 +234,7 @@ class RwcpClient(object):
     def sendRstSegment(self) -> bool:
         if self.state == RwcpClient.STATE_CLOSING:
             return True
-        print("send Rst Segment")
+        # print("send Rst Segment")
         self.reset(False)
         self.state = RwcpClient.STATE_CLOSING
 
@@ -244,7 +248,7 @@ class RwcpClient(object):
 
     def sendSyncSegment(self) -> bool:
         self.state = RwcpClient.STATE_SYNC_SENT
-        print("send Sync Segment")
+        # print("send Sync Segment")
         payload = bytes([self.transferSize >> 16 & 0xFF, self.transferSize >> 8 & 0xFF, self.transferSize & 0xFF])
         segment = RwcpSegment.create_valid_segment(RwcpSegment.HEADER_OPCODE_SYN, self.nextSequence, payload)
         if self.sendSegment(segment, RwcpClient.SYN_TIMEOUT_MS):
@@ -255,7 +259,7 @@ class RwcpClient(object):
         return False
 
     def sendDataSegment(self):
-        print("send Data Segment")
+        # print("send Data Segment")
         while (self.credits > 0 and len(self.pendingData) > 0
                and not self.isResendingSegments and self.state == RwcpClient.STATE_ESTABLISHED):
             segment = RwcpSegment.create_valid_segment(RwcpSegment.HEADER_OPCODE_DATA, self.nextSequence,
@@ -278,7 +282,7 @@ class RwcpClient(object):
     def resendSegment(self):
         if self.state == RwcpClient.STATE_ESTABLISHED:
             return
-        print("Resend Segment")
+        # print("Resend Segment")
         self.isResendingSegments = True
         self.credits = self.window
         for segment in self.unacknowledgedSegments:
@@ -292,7 +296,7 @@ class RwcpClient(object):
     def resendDataSegment(self):
         if self.state != RwcpClient.STATE_ESTABLISHED:
             return
-        print("Resend Data Segment")
+        # print("Resend Data Segment")
         self.isResendingSegments = True
         self.credits = self.window
         moved = 0
@@ -315,7 +319,7 @@ class RwcpClient(object):
                 self.sendDataSegment()
 
     def sendSegment(self, segment, delay) -> bool:
-        print("Send Segment Seq:", segment.sequence)
+        # print("Send Segment Seq:", segment.sequence)
         self.delegate.sendSegment(segment)
         if segment.flags == RwcpSegment.HEADER_OPCODE_GAP:
             return True
@@ -324,7 +328,7 @@ class RwcpClient(object):
         return True
 
     def removeSegmentFromQueue(self, opcode, sequence) -> bool:
-        print("removeSegmentFromQueue")
+        # print("removeSegmentFromQueue")
         index = 0
         for segment in self.unacknowledgedSegments:
             if segment.flags == opcode and segment.sequence == sequence:
@@ -341,7 +345,7 @@ class RwcpClient(object):
             return False
 
     def reset(self, complete):
-        print("Rwcp reset")
+        # print("Rwcp reset")
         self.lastAckSequence = -1
         self.nextSequence = 0
         self.unacknowledgedSegments = []
@@ -370,20 +374,20 @@ class RwcpClient(object):
 
     def setTimer(self, interval):
         self.cancelTimeout()
-        print("setTimer delay", interval)
+        # print("setTimer delay", interval)
         self.timer = threading.Timer(interval / 1000, self.segmentTimeout)
         self.timer.start()
         self.timerRunning = True
 
     def cancelTimeout(self):
         if self.timerRunning:
-            print("cancelTimer")
+            # print("cancelTimer")
             self.timer.cancel()
             self.timer = None
             self.timerRunning = False
 
     def segmentTimeout(self):
-        print("TIME OUT>")
+        # print("TIME OUT>")
         if self.timerRunning:
             self.timer.cancel()
             self.timerRunning = False
