@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "ຕັ້ງ​ຄ່າ"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "ປ່ອງຢ້ຽມ"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "ກ່ຽວກັບ"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "ເລີ່ມຕົ້ນເມື່ອເຂົ້າສູ່ລະບົບ Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "ວາງຮູບໃໝ່ແລ້ວ"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "ແບ່ງປັນກັບມືຖື"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "ເປີດ URL ທີ່ແບ່ງປັນໂດຍອັດຕະໂນມັດຈາກມືຖື"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "ແຈ້ງ​ການ​ເມື່ອ​ໄດ້​ຮັບ​ຮູບ​ພາບ​"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "ການເພີ່ມປະສິດທິພາບຮູບພາບເມື່ອແບ່ງປັນຈາກ PC"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "ໂອນໄວ"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "ດຸ່ນດ່ຽງ"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "ຄຸນະພາບ"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "ຮຸ່ນ"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "ການເຊື່ອມຕໍ່ສະຫນັບສະຫນູນ"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "ໃບອະນຸຍາດຊອບແວພາກສ່ວນທີສາມ"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "ກຳລັງເລີ່ມຕົ້ນ"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "ເຊົາ"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "ສະແດງປ່ອງຢ້ຽມ"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "ກະດານວາງ FlooGoo"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "ຫຍໍ້ລົງໃສ່ຖາດລະບົບ"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "ອອກຈາກແອັບ"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "ກະລຸນາໃສ່ dongle FlooGoo ຂອງທ່ານ"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "ວາງສະຕຣິງໃໝ່ຈາກແອັບຯມືຖືຂອງເຈົ້າ"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "ໃຊ້ FlooGoo dongle ເປີດ"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "ຮູບ​ພາບ​ໃຫມ່​ວາງ​ຈາກ App ໂທລະ​ສັບ​ມື​ຖື​ຂອງ​ທ່ານ​"
+

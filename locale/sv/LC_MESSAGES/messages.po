@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Uppstart"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "Fönster"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "Handla om"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Starta när du är inloggad i Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Ny bild klistrad in"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Dela till mobilen"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Öppna delad URL automatiskt från mobilen"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Meddelande vid mottagande av bild"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Bildoptimering vid delning från PC"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "Snabb överföring"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Balanserad"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "Kvalitet"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Version"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Supportlänk"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Programvarulicenser från tredje part"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Initierar"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Sluta med"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Visa fönster"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGoo Paste Board"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Minimera till systemfältet"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Avsluta appen"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Sätt i din FlooGoo-dongel"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "En ny sträng klistrad från din mobilapp"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Använd FlooGoo-dongeln på"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "En ny bild klistrad in från din mobilapp"
+

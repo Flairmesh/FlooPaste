@@ -6,7 +6,7 @@ def add_to_startup():
     user_name = getpass.getuser()
     # os.path.dirname(os.path.realpath(__file__))
     file_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-    file_name = os.path.abspath(os.path.dirname(sys.argv[0])) + '\FlooPasteMain.exe'
+    file_name = os.path.abspath(os.path.dirname(sys.argv[0])) + '\FlooPaste.exe'
     # print("exe located in", file_path)
     bat_path = r'C:\Users\%s\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup' % user_name
     bat_path_name = bat_path + '\\' + "FlooPaste.bat"

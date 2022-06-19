@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "سیٹ اپ"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "کھڑکی"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "کے بارے میں"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "ونڈوز میں لاگ ان ہونے پر شروع کریں۔"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "نئی تصویر چسپاں کر دی گئی۔"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "موبائل پر شیئر کریں۔"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "موبائل سے خود بخود مشترکہ یو آر ایل کھولیں۔"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "تصویر موصول ہونے پر اطلاع"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "پی سی سے شیئر کرتے وقت امیج آپٹیمائزیشن"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "فاسٹ ٹرانسفر"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "متوازن"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "معیار"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "ورژن"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "سپورٹ لنک"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "تھرڈ پارٹی سافٹ ویئر لائسنس"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "شروع کر رہا ہے۔"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "چھوڑو"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "ونڈو دکھائیں۔"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "فلوگو پیسٹ بورڈ"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "سسٹم ٹرے کو چھوٹا کریں۔"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "ایپ چھوڑیں۔"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "براہ کرم اپنا FlooGoo ڈونگل داخل کریں۔"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "آپ کے موبائل ایپ سے پیسٹ کی گئی ایک نئی تار"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "FlooGoo ڈونگل آن استعمال کریں۔"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "آپ کے موبائل ایپ سے پیسٹ کی گئی ایک نئی تصویر"
+

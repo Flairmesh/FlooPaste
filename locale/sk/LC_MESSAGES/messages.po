@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Nastaviť"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "okno"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "O"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Spustite po prihlásení do systému Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Bol prilepený nový obrázok"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Zdieľať v mobile"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Automaticky otvoriť zdieľanú adresu URL z mobilu"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Upozornenie po prijatí obrázka"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Optimalizácia obrazu pri zdieľaní z PC"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "Rýchly prenos"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Vyvážený"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "kvalita"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Verzia"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Odkaz na podporu"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Softvérové licencie tretích strán"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Inicializuje sa"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Ukončite"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Zobraziť okno"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGoo Paste Board"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Minimalizovať do systémovej lišty"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Ukončite aplikáciu"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Vložte svoj kľúč FlooGoo"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "Nový reťazec prilepený z vašej mobilnej aplikácie"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Zapnite kľúč FlooGoo"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "Nový obrázok prilepený z vašej mobilnej aplikácie"
+

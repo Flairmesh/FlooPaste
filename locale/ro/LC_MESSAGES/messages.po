@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Înființat"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "Fereastră"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "Despre"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Începeți când vă conectați la Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Imagine nouă a fost lipită"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Distribuie pe mobil"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Deschideți automat adresa URL comună de pe mobil"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Notificare la primirea imaginii"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Optimizarea imaginii la partajarea de pe PC"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "Transfer rapid"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Echilibrat"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "Calitate"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Versiune"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Link de asistență"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Licențe software de la terți"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Inițializarea"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Părăsi"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Afișează fereastra"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGoo Paste Board"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Minimizați în bara de sistem"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Ieșiți din aplicație"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Vă rugăm să introduceți dongle-ul FlooGoo"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "Un șir nou lipit din aplicația dvs. mobilă"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Folosiți cheia FlooGoo activată"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "O nouă imagine lipită din aplicația dvs. mobilă"
+

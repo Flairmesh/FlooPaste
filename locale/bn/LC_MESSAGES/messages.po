@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "সেটআপ"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "জানলা"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "সম্পর্কিত"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "উইন্ডোজে লগ ইন করলে শুরু করুন"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "নতুন ছবি আটকানো হয়েছে"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "মোবাইলে শেয়ার করুন"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "মোবাইল থেকে শেয়ার্ড ইউআরএল স্বয়ংক্রিয়ভাবে খুলুন"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "ছবি প্রাপ্তির পরে বিজ্ঞপ্তি"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "পিসি থেকে শেয়ার করার সময় ইমেজ অপটিমাইজেশন"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "দ্রুত স্থানান্তর"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "সুষম"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "গুণমান"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "সংস্করণ"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "সমর্থন লিঙ্ক"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "তৃতীয় পক্ষের সফটওয়্যার লাইসেন্স"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "শুরু করা হচ্ছে"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "প্রস্থান করুন"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "জানালা দেখাও"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGoo পেস্ট বোর্ড"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "সিস্টেম ট্রে - তে মিনিমাইজ করুন"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "অ্যাপ ছেড়ে দিন"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "অনুগ্রহ করে আপনার FlooGoo ডঙ্গল ঢোকান"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "আপনার মোবাইল অ্যাপ থেকে একটি নতুন স্ট্রিং আটকানো হয়েছে"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "FlooGoo ডঙ্গল চালু করুন"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "আপনার মোবাইল অ্যাপ থেকে একটি নতুন ছবি আটকানো হয়েছে"
+

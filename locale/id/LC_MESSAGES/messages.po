@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Mempersiapkan"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "Jendela"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "Tentang"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Mulai saat masuk ke Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Gambar baru ditempel"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Bagikan ke Seluler"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Buka otomatis URL bersama dari Seluler"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Pemberitahuan setelah menerima gambar"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Pengoptimalan gambar saat berbagi dari PC"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "transfer cepat"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Seimbang"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "Kualitas"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Versi: kapan"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Tautan Dukungan"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Lisensi Perangkat Lunak Pihak Ketiga"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Inisialisasi"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Berhenti"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Etalase"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "Papan Tempel FlooGoo"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Minimalkan ke System Tray"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Keluar dari Aplikasi"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Silakan masukkan dongle FlooGoo Anda"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "String baru ditempel dari Aplikasi seluler Anda"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Gunakan dongle FlooGoo di"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "Gambar baru ditempel dari Aplikasi seluler Anda"
+

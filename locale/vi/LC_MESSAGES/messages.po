@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Thành lập"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "Cửa sổ"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "Về"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Bắt đầu khi đăng nhập vào Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Hình ảnh mới được dán"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Chia sẻ với thiết bị di động"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Tự động mở URL được chia sẻ từ Di động"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Thông báo khi nhận được hình ảnh"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Tối ưu hóa hình ảnh khi chia sẻ từ PC"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "Chuyển khoản nhanh"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Cân bằng"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "Phẩm chất"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Phiên bản"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Liên kết hỗ trợ"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Giấy phép phần mềm của bên thứ ba"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Khởi tạo"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Từ bỏ"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Hiển thị cửa sổ"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "Bảng dán FlooGoo"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Thu nhỏ vào khay hệ thống"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Thoát ứng dụng"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Vui lòng chèn khóa FlooGoo của bạn"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "Một chuỗi mới được dán từ Ứng dụng dành cho thiết bị di động của bạn"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Sử dụng FlooGoo dongle trên"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "Một hình ảnh mới được dán từ Ứng dụng dành cho thiết bị di động của bạn"
+

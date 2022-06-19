@@ -1,5 +1,5 @@
 # Import Module
-import sys
+import sys, os
 import locale
 import tkinter as tk
 from tkinter import ttk
@@ -13,13 +13,13 @@ from FlooPacket import FlooPacket
 import Startup
 import FlooConfig
 
-
 userLocale = locale.getdefaultlocale()
 lan = userLocale[0].split('_')[0]
 # print(lan)
 
 # Set the local directory
-localedir = './locale'
+app_path = os.path.abspath(os.path.dirname(sys.argv[0]))
+localedir = app_path + '\locale'
 # Set up your magic function
 translate = gettext.translation("messages", localedir, languages=[lan], fallback=True)
 translate.install()
@@ -43,7 +43,7 @@ imageOpt.set(flooConfig.imageOpt())
 
 # root window title and dimension
 root.title("FlooPaste")
-root.iconbitmap('FlooPasteApp.ico')
+root.iconbitmap(app_path + '\FlooPasteApp.ico')
 # root.iconphoto(False, tk.PhotoImage(file='FlooPasteIcon.png'))
 # Set geometry (widthxheight)
 root.geometry('485x300')
@@ -73,13 +73,15 @@ setupPanel.columnconfigure(1, weight=1)
 setupPanel.columnconfigure(2, weight=1)
 
 # Define On/Off Images
-on = tk.PhotoImage(file="onS.png")
-off = tk.PhotoImage(file="offS.png")
+on = tk.PhotoImage(file=app_path+'\onS.png')
+off = tk.PhotoImage(file=app_path+'\offS.png')
 
 # Start with Windows
 # Label
 autoStart = tk.Label(setupPanel, text=_("Start when logged into Windows"))
 autoStart.grid(column=0, row=0, sticky='w')
+
+
 # SwitchButton
 
 
@@ -167,7 +169,6 @@ else:
     autoUrlButton = tk.Button(setupPanel, image=off, bd=0, command=url_switch)
 autoUrlButton.grid(column=2, row=2, sticky='e')
 
-
 # Send a notification when an image is got
 notifOnImageLabel = tk.Label(setupPanel, text=_("Notification upon receiving image"))
 notifOnImageLabel.grid(column=0, row=3, sticky='w')
@@ -195,13 +196,13 @@ else:
     notifOnImageButton = tk.Button(setupPanel, image=off, bd=0, command=notif_on_image_switch)
 notifOnImageButton.grid(column=2, row=3, sticky='e')
 
-
 # imageOptimizationRatioLabel
 imageOptimizationRatioLabel = tk.Label(setupPanel, text=_("Image optimization when sharing from PC"))
 imageOptimizationRatioLabel.grid(column=0, row=4, sticky='w')
 
 imageOptRadioFrame = tk.Frame(setupPanel, relief=tk.RAISED)
 imageOptRadioFrame.grid(column=0, row=5, columnspan=3, sticky='ew')
+
 
 # imageOptimizationRatio
 
@@ -248,7 +249,7 @@ copyRightInfo.pack()
 logoFrame = tk.Frame(aboutPanel, relief=tk.RAISED)
 logoFrame.grid(column=0, row=0, sticky='nsew')
 logo = tk.Canvas(logoFrame, width=230, height=64)
-img = tk.PhotoImage(file="FlooPasteHeader.png")
+img = tk.PhotoImage(file=app_path + '\FlooPasteHeader.png')
 logo.create_image(0, 0, anchor=tk.NW, image=img)
 logo.pack()
 
@@ -283,7 +284,8 @@ def show_window(icon, TrayMenuItem):
 def hide_window():
     global windowIcon
     root.withdraw()
-    image = Image.open("FlooPasteApp.ico")
+    # file_path = os.path.abspath(os.path.dirname(sys.argv[0]))
+    image = Image.open(app_path + '\FlooPasteApp.ico')
     menu = (TrayMenuItem(_('Quit'), quit_window), TrayMenuItem(_('Show Window'), show_window))
     icon = pystray.Icon("FlooPaste", image, _("FlooGoo Paste Board"), menu)
     icon.run()
@@ -316,13 +318,15 @@ def heartbeat_task():
         # check local clipboard
         if floo_transceiver.notified == FlooPacket.TYP_STR:
             statusbar.config(
-                text=_("Use FlooGoo dongle on ") + port_name + " - " + _("A new string pasted from your mobile App"))
+                text=_("Use FlooGoo dongle on ") + " " + port_name + " - " + _(
+                    "A new string pasted from your mobile App"))
         elif floo_transceiver.notified == FlooPacket.TYP_IMG:
             statusbar.config(
-                text=_("Use FlooGoo dongle on ") + port_name + " - " + _("A new image pasted from your mobile App"))
+                text=_("Use FlooGoo dongle on ") + " " + port_name + " - " + _(
+                    "A new image pasted from your mobile App"))
         else:
             statusbar.config(
-                text=_("Use FlooGoo dongle on ") + port_name)
+                text=_("Use FlooGoo dongle on ") + " " + port_name)
 
     root.after(1000, heartbeat_task)  # reschedule event in 2 seconds
 

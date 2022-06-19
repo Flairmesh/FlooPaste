@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Beállít"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "Ablak"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "Ról ről"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Indítsa el, amikor bejelentkezik a Windowsba"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Új kép beillesztve"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Megosztás mobilra"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Megosztott URL automatikus megnyitása mobilról"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Értesítés a kép kézhezvételekor"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Képoptimalizálás PC-ről történő megosztáskor"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "Gyors átvitel"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Kiegyensúlyozott"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "Minőség"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Változat"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Támogatási hivatkozás"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Harmadik fél szoftverlicencei"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Inicializálás"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Kilépés"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Az ablak megjelenítése"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGoo pasztatábla"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Minimalizálás a tálcára"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Lépjen ki az alkalmazásból"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Kérjük, helyezze be a FlooGoo hardverkulcsot"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "Új karakterlánc beillesztve a mobilalkalmazásból"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Használja a FlooGoo dongle-t"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "Új kép beillesztve a mobilalkalmazásból"
+

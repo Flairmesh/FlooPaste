@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "設定"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "窓"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "約"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Windowsにログインして開始"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "貼り付けた新しい画像"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "モバイルに共有"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "モバイルから共有URLを自動的に開く"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "画像受信時の通知"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "PCから共有する場合の画像の最適化"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "高速転送"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "バランスの取れた"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "品質"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "バージョン"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "サポートリンク"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "サードパーティのソフトウェアライセンス"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "初期化中"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "終了する"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "ショーウィンドウ"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGooペーストボード"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "システムトレイに最小化"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "アプリを終了します"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "FlooGooドングルを挿入してください"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "モバイルアプリから貼り付けられた新しい文字列"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "FlooGooドングルを使用する"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "モバイルアプリから貼り付けた新しい画像"
+

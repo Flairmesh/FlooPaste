@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Uzstādīt"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "Logs"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "Par"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Sāciet, kad esat pieteicies sistēmā Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Ielīmēts jauns attēls"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Kopīgot mobilajā ierīcē"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Automātiski atvērt kopīgoto URL no mobilās ierīces"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Paziņojums pēc attēla saņemšanas"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Attēla optimizācija, kopīgojot no datora"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "Ātra pārsūtīšana"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Līdzsvarots"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "Kvalitāte"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Versija"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Atbalsta saite"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Trešās puses programmatūras licences"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Inicializēšana"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Beidz"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Rādīt logu"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGoo pastas dēlis"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Minimizēt līdz sistēmas teknē"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Iziet no lietotnes"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Lūdzu, ievietojiet savu FlooGoo sargspraudni"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "No jūsu mobilās lietotnes ir ielīmēta jauna virkne"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Izmantojiet FlooGoo sargspraudni"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "No jūsu mobilās lietotnes ir ielīmēts jauns attēls"
+

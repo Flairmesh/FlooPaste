@@ -1,2 +1,2 @@
-:: --hidden-import plyer.platforms.win.notification 
-pyinstaller --onefile --noconsole FlooPasteMain.py
+::  
+pyinstaller --onefile --noconsole --icon=FlooPasteApp.ico FlooPasteMain.py

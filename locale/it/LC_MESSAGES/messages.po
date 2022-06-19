@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-10 17:07+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <support@flairmesh.com>\n"
+"Language-Team: LANGUAGE <support@flairmesh.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: FlooPasteMain.py:60
+msgid "Setup"
+msgstr "Impostare"
+
+#: FlooPasteMain.py:63
+msgid "Window"
+msgstr "Finestra"
+
+#: FlooPasteMain.py:66
+msgid "About"
+msgstr "Di"
+
+#: FlooPasteMain.py:81
+msgid "Start when logged into Windows"
+msgstr "Inizia dopo aver effettuato l'accesso a Windows"
+
+#: FlooPasteMain.py:111
+msgid "New image pasted"
+msgstr "Nuova immagine incollata"
+
+#: FlooPasteMain.py:120
+msgid "Share to Mobile"
+msgstr "Condividi su cellulare"
+
+#: FlooPasteMain.py:145
+msgid "Auto open shared URL from Mobile"
+msgstr "Apri automaticamente l'URL condiviso da Mobile"
+
+#: FlooPasteMain.py:172
+msgid "Notification upon receiving image"
+msgstr "Notifica alla ricezione dell'immagine"
+
+#: FlooPasteMain.py:200
+msgid "Image optimization when sharing from PC"
+msgstr "Ottimizzazione dell'immagine durante la condivisione da PC"
+
+#: FlooPasteMain.py:214
+msgid "Fast Transfer"
+msgstr "Trasferimento veloce"
+
+#: FlooPasteMain.py:216
+msgid "Balanced"
+msgstr "Equilibrato"
+
+#: FlooPasteMain.py:218
+msgid "Quality"
+msgstr "Qualità"
+
+#: FlooPasteMain.py:234
+msgid "Version"
+msgstr "Versione"
+
+#: FlooPasteMain.py:237
+msgid "Support Link"
+msgstr "Collegamento di supporto"
+
+#: FlooPasteMain.py:241
+msgid "Third-Party Software Licenses"
+msgstr "Licenze software di terze parti"
+
+#: FlooPasteMain.py:258
+msgid "Initializing"
+msgstr "Inizializzazione"
+
+#: FlooPasteMain.py:287
+msgid "Quit"
+msgstr "Uscire"
+
+#: FlooPasteMain.py:287
+msgid "Show Window"
+msgstr "Mostra finestra"
+
+#: FlooPasteMain.py:288
+msgid "FlooGoo Paste Board"
+msgstr "FlooGoo Paste Board"
+
+#: FlooPasteMain.py:299
+msgid "Minimize to System Tray"
+msgstr "Riduci a icona nella barra delle applicazioni"
+
+#: FlooPasteMain.py:301
+msgid "Quit App"
+msgstr "Esci dall'app"
+
+#: FlooPasteMain.py:314
+msgid "Please insert your FlooGoo dongle"
+msgstr "Inserisci il tuo dongle FlooGoo"
+
+#: FlooPasteMain.py:319
+msgid "A new string pasted from your mobile App"
+msgstr "Una nuova stringa incollata dalla tua app mobile"
+
+#: FlooPasteMain.py:319 FlooPasteMain.py:322 FlooPasteMain.py:325
+msgid "Use FlooGoo dongle on "
+msgstr "Usa il dongle FlooGoo"
+
+#: FlooPasteMain.py:322
+msgid "A new image pasted from your mobile App"
+msgstr "Una nuova immagine incollata dalla tua app mobile"
+
