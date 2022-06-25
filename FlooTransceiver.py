@@ -17,6 +17,7 @@ class FlooTransceiver(Thread):
     PORT_OPENED = 0
     PORT_CLOSED = 1
     NOTIFICATION_TIMEOUT = 400
+    HEARTBEAT_INTERVAL = 100
 
     def __init__(self, url_opt, image_opt, share_to_mobile, notif_on_image):
         super(FlooTransceiver, self).__init__()
@@ -30,6 +31,7 @@ class FlooTransceiver(Thread):
         self.flooParser = FlooPacketParser()
         self.notified = None
         self.notifiedCounter = 0
+        self.heartBeatCounter = 0
         # self.lastClipItemHash = None
         self.newClipItem = None
         self.autoUrl = url_opt
@@ -94,20 +96,21 @@ class FlooTransceiver(Thread):
     def heartBeat(self):
         if self.port is not None and self.port.is_open:
             if not self.sending:
-                # print("Send heart beats ...")
-                gap_seg = RwcpSegment.create_valid_segment(RwcpSegment.HEADER_OPCODE_GAP, 0)
-                self.port.write(gap_seg.bytes)
+                self.heartBeatCounter += 1
+                if self.heartBeatCounter == FlooTransceiver.HEARTBEAT_INTERVAL:
+                    # print("Send heart beats ...")
+                    self.heartBeatCounter = 0
+                    gap_seg = RwcpSegment.create_valid_segment(RwcpSegment.HEADER_OPCODE_GAP, 0)
+                    self.port.write(gap_seg.bytes)
             return self.port_name
         else:
             return None
-
         # A valid COM port name reported to the caller indicates transceiver is working
         return self.port_name
 
     def run(self):
         while True:
             if self.monitor_port():
-                heart_beat_counter = 0
                 while self.port is not None and self.port.is_open and not self.isSleep:
                     # print("monitoring rx ... ")
                     try:
@@ -144,13 +147,12 @@ class FlooTransceiver(Thread):
                                 self.notified = None
                         if self.shareToMobile:
                             if self.newClipItem is not None and self.flooParser.state == FlooPacketParser.HEAD:
-                                print("Send new clipboard item ")
+                                # print("Send new clipboard item ")
                                 floo_pkt = FlooPacket.create_valid_packet(self.newClipItem.type, self.newClipItem.bytes)
                                 self.newClipItem = None
                                 self.rwcpClient.sendData(floo_pkt.bytes, 255)
                                 self.sending = True
                         if not self.sending:
-                            # print("Idle heart beating")
                             self.heartBeat()
                     except Exception as exec0:
                         print(exec0)

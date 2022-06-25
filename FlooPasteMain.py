@@ -232,7 +232,7 @@ aboutPanel.columnconfigure(1, weight=1)
 aboutFrame = tk.Frame(aboutPanel, relief=tk.RAISED)
 aboutFrame.grid(column=1, row=0, sticky='nsew')
 
-versionInfo = tk.Label(aboutFrame, text=_("Version") + "1.0.0")
+versionInfo = tk.Label(aboutFrame, text=_("Version") + "1.0.1")
 versionInfo.pack()
 
 supportLink = tk.Label(aboutFrame, text=_("Support Link"), fg="blue", cursor="hand2")

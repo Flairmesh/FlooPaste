@@ -28,9 +28,9 @@ class FlooPacketParser(object):
                 case FlooPacketParser.HEAD:
                     if value == FlooPacket.HEADER:
                         self.state = FlooPacketParser.TYPE
-                        print("FlooPkt start")
-                    else:
-                        print("BAI msg byte, ignore")
+                        # print("FlooPkt start")
+                    # else:
+                        # print("BAI msg byte, ignore")
                     index += 1
                 case FlooPacketParser.TYPE:
                     self.type = value
@@ -61,7 +61,7 @@ class FlooPacketParser(object):
                         if new_item is not None:
                             parsed_items.append(new_item)
                         self.state = FlooPacketParser.HEAD
-                        print("FlooPkt parser reset")
+                        # print("FlooPkt parser reset")
                         self.payload = bytearray()
         if len(parsed_items) > 0:
             # print("parsed a new item")
