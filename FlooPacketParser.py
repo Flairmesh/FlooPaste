@@ -24,31 +24,30 @@ class FlooPacketParser(object):
         index = 0
         while index < len(payload):
             value = payload[index]
-            match self.state:
-                case FlooPacketParser.HEAD:
+            if self.state == FlooPacketParser.HEAD:
                     if value == FlooPacket.HEADER:
                         self.state = FlooPacketParser.TYPE
                         # print("FlooPkt start")
                     # else:
                         # print("BAI msg byte, ignore")
                     index += 1
-                case FlooPacketParser.TYPE:
+            elif self.state == FlooPacketParser.TYPE:
                     self.type = value
                     self.state = FlooPacketParser.LEN0
                     index += 1
-                case FlooPacketParser.LEN0:
+            elif self.state == FlooPacketParser.LEN0:
                     self.len = value << 16
                     self.state = FlooPacketParser.LEN1
                     index += 1
-                case FlooPacketParser.LEN1:
+            elif self.state == FlooPacketParser.LEN1:
                     self.len += value << 8
                     self.state = FlooPacketParser.LEN2
                     index += 1
-                case FlooPacketParser.LEN2:
+            elif self.state == FlooPacketParser.LEN2:
                     self.len += value
                     self.state = FlooPacketParser.PAYLOAD
                     index += 1
-                case FlooPacketParser.PAYLOAD:
+            elif self.state == FlooPacketParser.PAYLOAD:
                     if len(payload) - index < self.len:
                         self.payload.extend(payload[index:])
                         self.len -= len(payload) - index

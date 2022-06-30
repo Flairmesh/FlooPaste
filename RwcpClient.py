@@ -107,21 +107,19 @@ class RwcpClient(object):
             sequence = ack & RwcpSegment.HEADER_MASK_SEQ_NUMBER
             opcode = ack & RwcpSegment.HEADER_MASK_OPCODE
             segment = RwcpSegment.create_valid_segment(opcode, sequence)
-            match opcode:
-                case RwcpSegment.HEADER_OPCODE_SYN_ACK:
+            if opcode == RwcpSegment.HEADER_OPCODE_SYN_ACK:
                     self.receiveSyncAck(segment)
-                case RwcpSegment.HEADER_OPCODE_DATA_ACK:
+            elif opcode == RwcpSegment.HEADER_OPCODE_DATA_ACK:
                     self.receiveDataAck(segment)
-                case RwcpSegment.HEADER_OPCODE_RST:
+            elif opcode == RwcpSegment.HEADER_OPCODE_RST:
                     self.receiveRst(segment)
-                case RwcpSegment.HEADER_OPCODE_GAP:
+            elif opcode == RwcpSegment.HEADER_OPCODE_GAP:
                     self.receiveGap(segment)
             index += 1
 
     def receiveSyncAck(self, segment) -> bool:
         # print("Sync Ack")
-        match self.state:
-            case RwcpClient.STATE_SYNC_SENT:
+        if self.state == RwcpClient.STATE_SYNC_SENT:
                 self.cancelTimeout()
                 if self.validateAckSequence(RwcpSegment.HEADER_OPCODE_SYN, segment.sequence) >= 0:
                     self.state = RwcpClient.STATE_ESTABLISHED
@@ -131,18 +129,17 @@ class RwcpClient(object):
                     self.terminateSession()
                     self.sendRstSegment()
                 return True
-            case RwcpClient.STATE_ESTABLISHED:
+        elif self.state == RwcpClient.STATE_ESTABLISHED:
                 self.cancelTimeout()
                 if len(self.unacknowledgedSegments) > 0:
                     self.resendDataSegment()
                 return True
-            case RwcpClient.STATE_LISTEN | RwcpClient.STATE_CLOSING:
+        elif self.state == RwcpClient.STATE_LISTEN or self.state == RwcpClient.STATE_CLOSING:
                 return False
 
     def receiveDataAck(self, segment) -> bool:
         # print("Data Ack", self.state, "seq:", segment.sequence)
-        match self.state:
-            case RwcpClient.STATE_ESTABLISHED:
+        if self.state == RwcpClient.STATE_ESTABLISHED:
                 self.cancelTimeout()
                 if self.validateAckSequence(RwcpSegment.HEADER_OPCODE_DATA, segment.sequence) >= 0:
                     if self.credits > 0 and len(self.pendingData) > 0:
@@ -153,20 +150,19 @@ class RwcpClient(object):
                             or self.credits == 0 and len(self.pendingData) > 0:
                         self.setTimer(self.dataTimeout)
                 return True
-            case RwcpClient.STATE_CLOSING:
+        elif self.state == RwcpClient.STATE_CLOSING:
                 return True
-            case RwcpClient.STATE_LISTEN | RwcpClient.STATE_SYNC_SENT:
+        elif self.state == RwcpClient.STATE_LISTEN or self.state == RwcpClient.STATE_SYNC_SENT:
                 return False
 
     def receiveRst(self, segment) -> bool:
         # print("Rst Ack ", self.state)
-        match self.state:
-            case RwcpClient.STATE_SYNC_SENT:
+        if self.state == RwcpClient.STATE_SYNC_SENT:
                 return True
-            case RwcpClient.STATE_ESTABLISHED:
+        elif self.state == RwcpClient.STATE_ESTABLISHED:
                 self.terminateSession()
                 return True
-            case RwcpClient.STATE_CLOSING:
+        elif self.state == RwcpClient.STATE_CLOSING:
                 self.cancelTimeout()
                 self.validateAckSequence(RwcpSegment.HEADER_OPCODE_RST, segment.sequence)
                 self.reset(False)
@@ -176,12 +172,11 @@ class RwcpClient(object):
                 else:
                     self.delegate.didCompleteDataSend(True)
                 return True
-            case RwcpClient.STATE_LISTEN:
+        elif self.state == RwcpClient.STATE_LISTEN:
                 return False
 
     def receiveGap(self, segment) -> bool:
-        match self.state:
-            case RwcpClient.STATE_ESTABLISHED:
+        if self.state == RwcpClient.STATE_ESTABLISHED:
                 if self.lastAckSequence > segment.sequence:
                     return True
                 else:
@@ -190,9 +185,9 @@ class RwcpClient(object):
                 self.cancelTimeout()
                 self.resendDataSegment()
                 return True
-            case RwcpClient.STATE_CLOSING:
+        elif self.state == RwcpClient.STATE_CLOSING:
                 return True
-            case RwcpClient.STATE_LISTEN | RwcpClient.STATE_SYNC_SENT:
+        elif self.state == RwcpClient.STATE_LISTEN or self.state == RwcpClient.STATE_SYNC_SENT:
                 return False
 
     def validateAckSequence(self, opcode, sequence) -> int:

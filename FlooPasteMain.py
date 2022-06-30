@@ -1,5 +1,5 @@
 # Import Module
-import sys, os
+import sys, os, platform
 import locale
 import tkinter as tk
 from tkinter import ttk
@@ -19,7 +19,7 @@ lan = userLocale[0].split('_')[0]
 
 # Set the local directory
 app_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-localedir = app_path + '\locale'
+localedir = app_path + os.sep +'locale'
 # Set up your magic function
 translate = gettext.translation("messages", localedir, languages=[lan], fallback=True)
 translate.install()
@@ -43,7 +43,12 @@ imageOpt.set(flooConfig.imageOpt())
 
 # root window title and dimension
 root.title("FlooPaste")
-root.iconbitmap(app_path + '\FlooPasteApp.ico')
+if platform.system().lower().startswith('win'):
+    root.iconbitmap(app_path + os.sep + 'FlooPasteApp.ico')
+elif platform.system().lower().startswith('lin'):
+    img_icon = tk.PhotoImage(file=app_path + os.sep + 'FlooPasteApp.gif')
+    root.tk.call('wm', 'iconphoto', root._w, img_icon)
+
 # root.iconphoto(False, tk.PhotoImage(file='FlooPasteIcon.png'))
 # Set geometry (widthxheight)
 root.geometry('485x300')
@@ -73,8 +78,8 @@ setupPanel.columnconfigure(1, weight=1)
 setupPanel.columnconfigure(2, weight=1)
 
 # Define On/Off Images
-on = tk.PhotoImage(file=app_path+'\onS.png')
-off = tk.PhotoImage(file=app_path+'\offS.png')
+on = tk.PhotoImage(file=app_path+os.sep+'onS.png')
+off = tk.PhotoImage(file=app_path+os.sep+'offS.png')
 
 # Start with Windows
 # Label
@@ -249,7 +254,7 @@ copyRightInfo.pack()
 logoFrame = tk.Frame(aboutPanel, relief=tk.RAISED)
 logoFrame.grid(column=0, row=0, sticky='nsew')
 logo = tk.Canvas(logoFrame, width=230, height=64)
-img = tk.PhotoImage(file=app_path + '\FlooPasteHeader.png')
+img = tk.PhotoImage(file=app_path + os.sep + 'FlooPasteHeader.png')
 logo.create_image(0, 0, anchor=tk.NW, image=img)
 logo.pack()
 
@@ -285,7 +290,10 @@ def hide_window():
     global windowIcon
     root.withdraw()
     # file_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-    image = Image.open(app_path + '\FlooPasteApp.ico')
+    if platform.system().lower().startswith('win'):
+        image = Image.open(app_path + os.sep + 'FlooPasteApp.ico')
+    elif platform.system().lower().startswith('lin'):
+        image = tk.PhotoImage(file=app_path + os.sep + 'FlooPasteApp.gif')
     menu = (TrayMenuItem(_('Quit'), quit_window), TrayMenuItem(_('Show Window'), show_window))
     icon = pystray.Icon("FlooPaste", image, _("FlooGoo Paste Board"), menu)
     icon.run()

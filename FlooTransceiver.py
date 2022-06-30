@@ -1,5 +1,5 @@
 from threading import *
-import time, os, sys
+import time, os, sys, platform
 from Clipboard import Clipboard
 import serial
 import serial.tools.list_ports
@@ -78,8 +78,13 @@ class FlooTransceiver(Thread):
                 # print("current port ", self.port_name, " state: ", self.port_opened)
                 try:
                     # print("try open")
-                    self.port = serial.Serial(port=self.port_name, baudrate=921600,
-                                              bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE)
+                    if platform.system().lower().startswith('win'):
+                        self.port = serial.Serial(port=self.port_name, baudrate=921600,
+                                                  bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE)
+                    elif platform.system().lower().startswith('lin'):
+                        self.port = serial.Serial(port='/dev/' + self.port_name, baudrate=921600,
+                                                  bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE)
+
                     # self.port.open()
                     self.port_opened = self.port.is_open
                     return self.port_opened
@@ -137,7 +142,7 @@ class FlooTransceiver(Thread):
                                             notif.application_name = "FlooPaste"
                                             notif.title = "FlooPaste"
                                             file_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-                                            notif.icon = file_path + '\FlooPasteNotif.ico'
+                                            notif.icon = file_path + os.sep + 'FlooPasteNotif.ico'
                                             notif.message = self.notifOnImage
                                             notif.send(block=False)
                         # print("serial idle")
@@ -162,9 +167,10 @@ class FlooTransceiver(Thread):
             time.sleep(1)  # check port after 1 second
 
     def sendSegment(self, segment):
-        if self.port.is_open:
-            # print("port out", segment.bytes)
-            self.port.write(segment.bytes)
+        if self.port is not None:
+            if self.port.is_open:
+                # print("port out", segment.bytes)
+                self.port.write(segment.bytes)
 
     def didMakeProgress(self, progress):
         # print("transfer progress ", progress)

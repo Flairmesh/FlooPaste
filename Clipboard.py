@@ -1,9 +1,13 @@
 import ctypes
 import threading
-import io
+import io, time
 import validators
 import webbrowser
-import win32api, win32clipboard, win32con, win32gui
+import platform
+if platform.system().lower().startswith('win'):
+    import win32api, win32clipboard, win32con, win32gui
+elif platform.system().lower().startswith('lin'):
+    import pyperclip
 from io import BytesIO
 from PIL import Image
 from SharedItem import SharedItem
@@ -22,6 +26,8 @@ class Clipboard:
         self.delegate = delegate
         self.imgOpt = img_opt
         self.lastHash = Clipboard.randomHash()
+        if platform.system().lower().startswith('lin'):
+            self.lastText = Clipboard.randomString()
         # self.item = self.copy_item_from_clipboard()
         # delegate.newClipItem = self.item
 
@@ -42,9 +48,20 @@ class Clipboard:
 
     def listen(self):
         def runner():
-            hwnd = self._create_window()
-            ctypes.windll.user32.AddClipboardFormatListener(hwnd)
-            win32gui.PumpMessages()
+            if platform.system().lower().startswith('win'):
+                hwnd = self._create_window()
+                ctypes.windll.user32.AddClipboardFormatListener(hwnd)
+                win32gui.PumpMessages()
+            elif platform.system().lower().startswith('lin'):
+                while True:
+                    text_clipboard = pyperclip.paste()
+                    utf8_bytes = text_clipboard.encode()
+                    hash_value = hashlib.sha256(utf8_bytes).digest()
+                    if hash_value != self.lastHash:
+                        self.lastHash = hash_value
+                        self.lastText = text_clipboard
+                        self.delegate.newClipItem = SharedItem.create_valid_item(FlooPacket.TYP_STR, utf8_bytes, hash_value)
+                    time.sleep(1)
 
         th = threading.Thread(target=runner, daemon=True)
         th.start()
@@ -71,6 +88,11 @@ class Clipboard:
         if item.hashValue != self.lastHash:
             self.delegate.newClipItem = item
             self.lastHash = item.hashValue
+
+    @staticmethod
+    def randomString() -> string:
+        letters = string.punctuation
+        return ''.join(random.choice(letters) for i in range(128))
 
     @staticmethod
     def randomHash() -> bytes:
@@ -126,7 +148,10 @@ class Clipboard:
             if valid:
                 webbrowser.open(decoded_str)
                 return
-        self.send_to_clipboard(win32clipboard.CF_UNICODETEXT, decoded_str)
+        if platform.system().lower().startswith('win'):
+            self.send_to_clipboard(win32clipboard.CF_UNICODETEXT, decoded_str)
+        elif platform.system().lower().startswith('lin'):
+            self.send_to_clipboard('STR', decoded_str)
         self.lastHash = hashlib.sha256(utf8bytes).digest()
 
     def send_jpeg_to_clipboard(self, jpeg_data: bytes):
@@ -141,7 +166,12 @@ class Clipboard:
         self.lastHash = hashlib.sha256(data).digest()
 
     def send_to_clipboard(self, clip_type, data):
-        win32clipboard.OpenClipboard()
-        win32clipboard.EmptyClipboard()
-        win32clipboard.SetClipboardData(clip_type, data)
-        win32clipboard.CloseClipboard()
+        if platform.system().lower().startswith('win'):
+            win32clipboard.OpenClipboard()
+            win32clipboard.EmptyClipboard()
+            win32clipboard.SetClipboardData(clip_type, data)
+            win32clipboard.CloseClipboard()
+        elif platform.system().lower().startswith('lin'):
+            if clip_type == 'STR':
+                pyperclip.copy(data)
+
