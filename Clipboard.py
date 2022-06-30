@@ -7,7 +7,7 @@ import platform
 if platform.system().lower().startswith('win'):
     import win32api, win32clipboard, win32con, win32gui
 elif platform.system().lower().startswith('lin'):
-    import pyperclip
+    import pyclip
 from io import BytesIO
 from PIL import Image
 from SharedItem import SharedItem
@@ -54,7 +54,7 @@ class Clipboard:
                 win32gui.PumpMessages()
             elif platform.system().lower().startswith('lin'):
                 while True:
-                    text_clipboard = pyperclip.paste()
+                    text_clipboard = pyclip.paste(text=True)
                     utf8_bytes = text_clipboard.encode()
                     hash_value = hashlib.sha256(utf8_bytes).digest()
                     if hash_value != self.lastHash:
@@ -173,5 +173,5 @@ class Clipboard:
             win32clipboard.CloseClipboard()
         elif platform.system().lower().startswith('lin'):
             if clip_type == 'STR':
-                pyperclip.copy(data)
+                pyclip.copy(data)
 
