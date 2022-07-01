@@ -54,13 +54,16 @@ class Clipboard:
                 win32gui.PumpMessages()
             elif platform.system().lower().startswith('lin'):
                 while True:
-                    text_clipboard = pyclip.paste(text=True)
-                    utf8_bytes = text_clipboard.encode()
-                    hash_value = hashlib.sha256(utf8_bytes).digest()
-                    if hash_value != self.lastHash:
-                        self.lastHash = hash_value
-                        self.lastText = text_clipboard
-                        self.delegate.newClipItem = SharedItem.create_valid_item(FlooPacket.TYP_STR, utf8_bytes, hash_value)
+                    try:
+                        text_clipboard = pyclip.paste(text=True)
+                        utf8_bytes = text_clipboard.encode()
+                        hash_value = hashlib.sha256(utf8_bytes).digest()
+                        if hash_value != self.lastHash:
+                            self.lastHash = hash_value
+                            self.lastText = text_clipboard
+                            self.delegate.newClipItem = SharedItem.create_valid_item(FlooPacket.TYP_STR, utf8_bytes, hash_value)
+                    except Exception as exec0:
+                        print(exec0)
                     time.sleep(1)
 
         th = threading.Thread(target=runner, daemon=True)
