@@ -21,6 +21,11 @@ pyclip (needs xclip or wl-clipboard)
 pyserial
 pystray
 validators
+
+On Linux, if you run the app as a non-root user, you might get "Permission denied: '/dev/ttyACM0'" error. 
+Please verify the ttyACM0 device is the "dialout" user group and add your $USER to the group.
+You may take the following link as a reference,
+https://askubuntu.com/questions/133235/how-do-i-allow-non-root-access-to-ttyusb0
  
 ## Usage
 
