@@ -155,7 +155,8 @@ class FlooTransceiver(Thread):
                                 # print("Send new clipboard item ")
                                 floo_pkt = FlooPacket.create_valid_packet(self.newClipItem.type, self.newClipItem.bytes)
                                 self.newClipItem = None
-                                self.rwcpClient.sendData(floo_pkt.bytes, 255)
+                                # used to be 255, now 244
+                                self.rwcpClient.sendData(floo_pkt.bytes, 244)
                                 self.sending = True
                         if not self.sending:
                             self.heartBeat()
@@ -169,7 +170,7 @@ class FlooTransceiver(Thread):
     def sendSegment(self, segment):
         if self.port is not None:
             if self.port.is_open:
-                # print("port out", segment.bytes)
+                # print("sendSegment len", len(segment.bytes))
                 self.port.write(segment.bytes)
 
     def didMakeProgress(self, progress):
