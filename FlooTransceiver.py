@@ -68,7 +68,6 @@ class FlooTransceiver(Thread):
 
     def monitor_port(self) -> bool:
         if self.isSleep:
-
             return False
 
         ports = [port.name for port in serial.tools.list_ports.grep('0A12:4007.*FMA100')]
@@ -91,6 +90,7 @@ class FlooTransceiver(Thread):
                     # print("Change port state: ", self.port_opened)
                 except Exception as exec0:
                     print(exec0)
+                    self.reset()
                     return False
         else:
             if self.port_opened:
